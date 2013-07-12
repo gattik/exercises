@@ -38,10 +38,8 @@ class Seconds
 
 	def age
 		puts "Your age in seconds?"
-		puts "Index we're trying is #{@rep-1}"
 		seconds = gets.chomp.to_i
 		years = (seconds* 1.0)/(@planets[@rep-1])
-		puts "Index we're trying is #{(@planets[@rep-1])}"
 		puts "You are #{years} years old on #{@s_rep[@rep-1]}."
 	end
 
