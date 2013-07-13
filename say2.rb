@@ -1,40 +1,33 @@
-class Say
-  def initialize
-    @s_tens = ["twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"]
-    @to_nineteen = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight",
-    "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen",
-    "seventeen", "eighteen", "nineteen"]
-  end
+class Chunks
 
   def start
-    puts "Enter a number from 0 to 99."
+    puts "Enter a number from 0 to 999,999,999,999."
     @question = gets.chomp.to_i
+    number
   end
 
-  def unique_number
-    start
-    if (0..19).include?(@question)
-      answer = @to_nineteen[@question]
-      puts "#{@question} is #{answer} in English."
-    else
-      number_strings
-    end
-  end
-
-  def number_strings
-    @s_question = @question.to_s
-    @s_question = @s_question.split("")
-      tens = @s_question[0]
-      ones = @s_question[1]
-      if ones.to_i == 0
-        answer = "#{@s_tens[tens.to_i-2]}"
-      else
-        answer = "#{@s_tens[tens.to_i-2]}-#{@to_nineteen[ones.to_i]}"
+  def number
+    if (0..999999999999).include?(@question)
+      @question = @question.to_s
+      if @question.length%3 == 0
+        answer = @question.scan(/.{1,3}/).join(',')
+        puts answer
+    elsif (@question.length-1)%3 == 0
+        @question.insert(0," ")
+        @question.insert(0," ")
+        answer = @question.scan(/.{1,3}/).join(',')
+        puts answer.strip
+    else (@question.length-2)%3 == 0
+        @question.insert(0," ")
+      answer = @question.scan(/.{1,3}/).join(',')
+        puts answer.strip
       end
-      puts "#{@question} is #{answer} in English."
+    else
+      puts "Out of range, try again."
+    end
   end
 
 end
 
-hi = Say.new
-hi.unique_number
+hi = Chunks.new
+hi.start
