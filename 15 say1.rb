@@ -36,5 +36,5 @@ class Say
 
 end
 
-hi = Say.new
-hi.unique_number
+go = Say.new
+go.unique_number
