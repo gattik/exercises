@@ -1,7 +1,7 @@
 class Chunks
 
   def start
-    puts "Enter a number from 0 to 999,999,999,999."
+    puts "Enter a number from 0 to 999,999,999,999 without commas."
     @question = gets.chomp.to_i
     number
   end
