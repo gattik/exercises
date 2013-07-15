@@ -5,7 +5,8 @@ class DNA
     @letters.delete("C")
     @letters.delete("G")
     @letters.delete("T")
-    @n_letters = ["A", "C", "G", "T"]
+    @letters.delete("U")
+    @n_letters = ["A", "C", "G", "T", "U"]
   end
 
   def start
@@ -15,9 +16,6 @@ class DNA
   end
 
   def valid_test
-    # @letters.to_s
-    # @letters = @letters.join
-    # @question.to_s
     @question = @question.split("")
     if @question.any? { |l| @letters.include? l }
       puts "You patient is impossibly sick, try again."
