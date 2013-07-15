@@ -9,7 +9,7 @@ class Giga
   end
 
   def get_date
-  	year = ask("Please enter your 4-digit year of birth.").to_i
+    year = ask("Please enter your 4-digit year of birth.").to_i
     month = ask("Please enter your 2-digit month of birth.").to_i
     day = ask("Please enter your 2-digit day of birth.").to_i
     puts "You were born #{m_month}/#{day}/#{year}."
