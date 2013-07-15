@@ -2,9 +2,9 @@ class Shape
 
 	def initialize
 		@shapes = ["none", "henagon", "digon", "triangle", "quadrilateral", "pentagon",
-					"hexagon", "heptagon", "octagon", "nonagon", "decagon",
-					"hendecagon", "dodecagon", "tridecagon", "tetradecagon", "pentadecagon",
-					"hexadecagon", "heptadecagon", "octadecagon", "icosagon"]
+			"hexagon", "heptagon", "octagon", "nonagon", "decagon", "hendecagon",
+			"dodecagon", "tridecagon", "tetradecagon", "pentadecagon", "hexadecagon",
+			"heptadecagon", "octadecagon", "icosagon"]
 	end
 
 	def start
@@ -65,5 +65,5 @@ class Shape
 	end
 
 end
-hi = Shape.new
-hi.start
+yo = Shape.new
+yo.start
